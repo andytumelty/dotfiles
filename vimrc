@@ -154,6 +154,13 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+
+highlight ColorColumn ctermbg=0
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
