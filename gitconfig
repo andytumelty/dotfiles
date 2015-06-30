@@ -9,7 +9,7 @@
   ca = commit --amend -v
   ci = commit -v
   co = checkout
-  st = status
+  st = status -sb
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
