@@ -1,0 +1,7 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+noremap j 3j
+noremap k 3k
+source! /home/laycat/.vimperatorrc.local
+
+" vim: set ft=vimperator:
