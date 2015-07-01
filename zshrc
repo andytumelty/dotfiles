@@ -1,12 +1,5 @@
-# modify the prompt to contain git branch name if applicable
-git_prompt_info() {
-  current_branch=$(git current-branch 2> /dev/null)
-  if [[ -n $current_branch ]]; then
-    echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
-  fi
-}
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+export PS1='%{$fg_bold[blue]%}%c%{$reset_color%} %# '
 
 # load our own completion functions
 # fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
@@ -47,6 +40,18 @@ unsetopt nomatch
 bindkey -v
 bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
+
+# additions from http://dougblack.io/words/zsh-vi-mode.html
+function zle-line-init zle-keymap-select {
+    VNORM="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    VMAIN="%{$fg_bold[blue]%} [% INSERT]% %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VNORM}/(main|viins)/$VMAIN}"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
 
 # handy keybindings
 bindkey "^A" beginning-of-line
