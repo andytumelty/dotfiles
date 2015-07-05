@@ -36,22 +36,23 @@ setopt extendedglob
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
+bindkey -e
 # vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
+# bindkey -v
+# bindkey "^F" vi-cmd-mode
+# bindkey jj vi-cmd-mode
 
 # additions from http://dougblack.io/words/zsh-vi-mode.html
-function zle-line-init zle-keymap-select {
-    VNORM="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-    VMAIN="%{$fg_bold[blue]%} [% INSERT]% %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VNORM}/(main|viins)/$VMAIN}"
-    zle reset-prompt
-}
+# function zle-line-init zle-keymap-select {
+#     VNORM="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+#     VMAIN="%{$fg_bold[blue]%} [% INSERT]% %{$reset_color%}"
+#     RPS1="${${KEYMAP/vicmd/$VNORM}/(main|viins)/$VMAIN}"
+#     zle reset-prompt
+# }
 
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# export KEYTIMEOUT=1
 
 # handy keybindings
 bindkey "^A" beginning-of-line
