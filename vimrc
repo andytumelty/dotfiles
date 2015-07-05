@@ -1,16 +1,16 @@
 " Leader
-let mapleader = " "
+" let mapleader = " "
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
-set ruler         " show the cursor position all the time
+" set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+" set laststatus=2  " Always display the status line
+" set autowrite     " Automatically :write before running commands
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -48,7 +48,7 @@ augroup vimrcEx
   autocmd FileType markdown setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  " autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
   " Automatically wrap at 72 characters and spell check git commit messages
   autocmd FileType gitcommit setlocal textwidth=72
@@ -65,7 +65,7 @@ set shiftround
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -80,8 +80,8 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+set colorcolumn=81
 
 " Numbers
 set number
@@ -90,17 +90,17 @@ set numberwidth=5
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+" set wildmode=list:longest,list:full
+" function! InsertTabWrapper()
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     else
+"         return "\<c-p>"
+"     endif
+" endfunction
+" inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <S-Tab> <c-n>
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
@@ -112,10 +112,10 @@ map <Leader>ct :!ctags -R .<CR>
 nnoremap <leader><leader> <c-^>
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" nnoremap <Left> :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up> :echoe "Use k"<CR>
+" nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
@@ -146,10 +146,10 @@ let g:syntastic_eruby_ruby_quiet_messages =
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
+" set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
-set complete+=kspell
+" set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
