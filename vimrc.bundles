@@ -46,6 +46,7 @@ Plug 'vim-scripts/tComment'
 Plug 'bling/vim-airline'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'embear/vim-foldsearch'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
