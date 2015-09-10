@@ -49,6 +49,7 @@ Plug 'bling/vim-airline'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-foldsearch'
+Plug 'sjl/gundo.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

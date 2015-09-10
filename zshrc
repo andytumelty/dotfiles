@@ -36,6 +36,9 @@ setopt extendedglob
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
+# Enable comments
+setopt interactivecomments
+
 bindkey -e
 # vi mode
 # bindkey -v
