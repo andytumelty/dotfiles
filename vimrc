@@ -163,7 +163,7 @@ let g:airline_right_sep = ''
 let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
 
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=234
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
