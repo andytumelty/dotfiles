@@ -23,5 +23,8 @@
   prune = true
 [rebase]
   autosquash = true
+[user]
+  name=Andrew Tumelty
+  email=andrew.tumelty@gmail.com
 [include]
   path = ~/.gitconfig.local
