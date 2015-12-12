@@ -1,12 +1,22 @@
-paydayday=6
+PD_DAY=6
+
 d=$(date +%d)
 d=${d#0}
-if [[ $d -gt $paydayday ]]; then
-  payday=$(date +%s -d "$(date +%Y)-$(($(date +%m) + 1))-$paydayday")
-else
-  payday=$(date +%s -d "$(date +%Y-%m)-$paydayday")
+m=$(date +%m)
+m=${m#0}
+y=$(date +%y)
+
+if [[ $d -gt $PD_DAY ]]; then
+  if [[ $m -eq 12 ]]; then
+    y=$((y + 1))
+    m=1
+  else
+    m=$((m + 1))
+  fi
 fi
-days_til_payday=$(((payday - $(date +%s))/86400 + 1))
+
+next_pd=$(date +%s -d "$y-$m-$PD_DAY")
+days_til_payday=$(((next_pd - $(date +%s))/86400 + 1))
 
 output="$days_til_payday days until payday!"
 ( command -v fortune > /dev/null ) && output="$output\n$(fortune -s)"
