@@ -165,6 +165,8 @@ let g:airline_left_sep = ''
 
 highlight ColorColumn ctermbg=234
 
+colorscheme colorsbox-material
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

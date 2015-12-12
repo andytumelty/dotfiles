@@ -50,7 +50,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-foldsearch'
 Plug 'sjl/gundo.vim'
-Plug 'mattn/flappyvird-vim'
+" Plug 'mattn/flappyvird-vim'
+Plug 'mkarmona/colorsbox'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
