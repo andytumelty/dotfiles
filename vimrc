@@ -173,4 +173,4 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 " Set region to British English
-set spelllang=en_gb
+set spell spelllang=en_gb
