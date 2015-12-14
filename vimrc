@@ -1,5 +1,5 @@
 " Leader
-" let mapleader = " "
+let mapleader = " "
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -140,7 +140,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " NERDTreeToggle
-nmap \e :NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
