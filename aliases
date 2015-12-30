@@ -16,4 +16,6 @@ alias s="rspec"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Include custom aliases
+alias ctc="xclip -selection clipboard"
+alias scr="vim ~/Dokumente/scratch.$(date +%F)"
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

@@ -1,3 +1,5 @@
+#'[ -z `ps -o command= -p $PPID | grep tmux` ] && $HOME/.bin/tat
+
 setopt promptsubst
 export PS1='%{$fg_bold[blue]%}%c%{$reset_color%} %# '
 
