@@ -1,7 +1,7 @@
 #'[ -z `ps -o command= -p $PPID | grep tmux` ] && $HOME/.bin/tat
 
 setopt promptsubst
-export PS1='%{$fg_bold[blue]%}%c%{$reset_color%} %# '
+export PS1='%{$fg[blue]%}%m:%c%{$reset_color%} %# '
 
 # load our own completion functions
 # fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)

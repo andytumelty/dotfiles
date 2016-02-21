@@ -1,10 +1,16 @@
+if [ "$(uname)" == "Darwin" ]; then
+  date_cmd="gdate"
+else
+  date_cmd="date"
+fi
+
 PD_DAY=6
 
-d=$(date +%d)
+d=$($date_cmd +%d)
 d=${d#0}
-m=$(date +%m)
+m=$($date_cmd +%m)
 m=${m#0}
-y=$(date +%y)
+y=$($date_cmd +%y)
 
 if [[ $d -gt $PD_DAY ]]; then
   if [[ $m -eq 12 ]]; then
@@ -15,8 +21,8 @@ if [[ $d -gt $PD_DAY ]]; then
   fi
 fi
 
-next_pd=$(date +%s -d "$y-$m-$PD_DAY")
-days_til_payday=$(((next_pd - $(date +%s))/86400 + 1))
+next_pd=$($date_cmd +%s -d "$y-$m-$PD_DAY")
+days_til_payday=$(((next_pd - $($date_cmd +%s))/86400 + 1))
 
 output="$days_til_payday days until payday!"
 ( command -v fortune > /dev/null ) && output="$output\n$(fortune -s)"
