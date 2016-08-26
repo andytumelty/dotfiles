@@ -17,5 +17,8 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Include custom aliases
 alias ctc="xclip -selection clipboard"
-alias scr="vim ~/Dokumente/scratch.$(date +%F)"
+alias scr="vim ~/Documents/scratch.md"
+
+alias journal='echo "$(whoami)@$(hostname) at $(date +%FT%T):" >> ~/Dropbox/journal/journal.$(date +%F) && vim ~/Dropbox/journal.$(date +%F)'
+
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
